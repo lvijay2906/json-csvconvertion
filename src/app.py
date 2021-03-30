@@ -1,10 +1,3 @@
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def index():
-    return "Hello World"
-
-    if __name__ == "__main__":
-        app.run()
+import pandas as pd
+df = pd.read_json (r'.\json\orders_data.json')
+df.to_csv (r'.\csv\data_file.csv', index = None)
